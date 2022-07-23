@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Rock, paper, scissors, lizard, Spock!</h1>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <div class="block">
+                <div class="scissors" onclick="jugar('scissors')"></div>
+                <div class="spock" onclick="jugar('spock')"></div>
+                <div class="paper" onclick="jugar('paper')"></div>
+                <div class="lizard" onclick="jugar('lizard')"></div>
+                <div class="rock" onclick="jugar('rock')"></div>
+            </div>
+        </div>
+
+        <div class="scoreboard" id="scoreboard">
+            <div class="score">
+                <h2>Score</h2>
+                <table>
+                    <tr>
+                        <td>me</td>
+                        <td>VS</td>
+                        <td>cpu</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="status">
+                <h2></h2>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="menu">
+            <h2>Welcome to Rock, paper, scissors, lizard, Spock!</h2>
+            <p>* You'll play against the cpu.</p>
+            <p>* The first one to win 5 times will be the winner.</p>
+            <h2>Instructions:</h2>
+            <p><i>"Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, 
+                Spock smashes scissors, scissors decapitates lizard, lizard eats paper, 
+                paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors."</i></p>
+            <button type="button" id="start-game">Let's begin</button>
+        </div>
+
+
+        <!-- pantalla <= 850px -->
+        <div class="player-score">
+            <h2>Me</h2>
+            <p>0</p>
+        </div>
+
+        <div class="cpu-score">
+            <h2>CPU</h2>
+            <p>0</p>
+        </div>
+
+    </main>
+
+    <div id="overlay">
+        <div class="modal" id='modal'>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+

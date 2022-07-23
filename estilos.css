@@ -1,0 +1,556 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html
+{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+body
+{
+    background: rgb(158,158,162);
+    background: -moz-linear-gradient(76deg, rgba(158,158,162,1) 0%, rgba(1,72,132,1) 44%, rgba(102,85,231,1) 100%);
+    background: -webkit-linear-gradient(76deg, rgba(158,158,162,1) 0%, rgba(1,72,132,1) 44%, rgba(102,85,231,1) 100%);
+    background: linear-gradient(76deg, rgba(158,158,162,1) 0%, rgba(1,72,132,1) 44%, rgba(102,85,231,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9e9ea2",endColorstr="#6655e7",GradientType=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>> HEADER*/
+
+h1
+{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+h1 .player-span
+{
+    color: rgb(36, 243, 98);
+    font-style: italic;
+}
+
+h1 .cpu-span
+{
+    color: red;
+    font-style: italic;
+}
+
+/* >>>>>>>>>>>>>>>>>>>> MAIN*/
+
+main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container 
+{
+    width: 60%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background: url("./assets/imgs/game.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.game-container .block
+{
+    width: 100%;
+    max-width: 510px;
+    /* background-color: red; */
+    opacity: 0.7;
+    position: relative;
+}
+
+.game-container .block div
+{
+    position:absolute;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+}
+
+.game-container .block div:nth-child(1)
+{
+    top: 0;
+    left: 167px;
+}
+
+.game-container .block div:nth-child(1):hover
+{
+    background-color: rgba(180, 34, 238, 0.6);
+    border: 2px solid rgba(247, 243, 243,0.6);
+}
+
+
+
+.game-container .block div:nth-child(2)
+{
+    top: 125px;
+    left: 0px;
+}
+
+.game-container .block div:nth-child(2):hover
+{
+    background-color: rgba(110, 108, 245, 0.6);
+    border: 2px solid rgba(247, 243, 243,0.6);
+}
+
+
+.game-container .block div:nth-child(3)
+{
+    top: 121px;
+    right: -1px;
+}
+
+.game-container .block div:nth-child(3):hover
+{
+    background-color: rgba(241, 239, 64, 0.6);
+    border: 2px solid rgba(247, 243, 243,0.6);
+}
+
+
+.game-container .block div:nth-child(4)
+{
+    bottom: 0;
+    left: 67px;
+}
+
+.game-container .block div:nth-child(4):hover
+{
+    background-color: rgba(56, 248, 31, 0.6);
+    border: 2px solid rgba(247, 243, 243,0.6);
+}
+
+
+.game-container .block div:nth-child(5)
+{
+    bottom: 3px;
+    right: 61px;
+}
+
+.game-container .block div:nth-child(5):hover
+{
+    background-color: rgba(241, 12, 24, 0.6);
+    border: 2px solid rgba(247, 243, 243,0.6);
+}
+
+
+.scoreboard
+{
+    width: 35%;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: rgba(247, 243, 243,0.6);
+    border-radius: 20px;
+    border: 2px solid black;
+    height: 400px;
+    display: none;
+}
+
+.scoreboard div
+{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard div h2
+{
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.scoreboard div tr
+{
+    font-size: 3.2rem;
+}
+
+.scoreboard div table
+{
+    margin-bottom: 50px;
+}
+
+.scoreboard div table td
+{
+    padding: 0 10px;
+    
+}
+
+.scoreboard div table tr:nth-child(2) td
+{
+    font-weight: bolder;
+}
+
+
+.status p
+{
+    font-size: 1.9rem;
+    margin-top: 10px;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>> MENU*/
+
+.menu
+{
+    width: 60%;
+    padding: 30px 10px;
+    background-color: beige;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 50px;
+    max-width: 600px;
+}
+
+.menu h2
+{
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.menu h2:nth-child(4)
+{
+    color:red;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.menu p
+{
+    font-size: 1.7rem;
+}
+
+.menu button
+{
+    padding:10px 20px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 25px;
+    font-size: 2rem;
+    background-color: rgb(43, 119, 235);
+    color: white;
+    font-weight: bolder;
+}
+
+.menu button:hover
+{
+    background-color: rgb(97, 156, 243);
+
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>> pantalla <850px */
+
+.player-score
+{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    display: none;
+}
+.player-score h2
+{
+    color: white;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+.player-score p
+{
+    color: white;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+
+.cpu-score
+{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    display: none;
+}
+.cpu-score h2
+{
+    color: white;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+.cpu-score p
+{
+    color: white;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+
+.active
+{
+    display: flex;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MODAL >>>>>>>>>>>*/
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MODAL*/
+
+
+
+
+.modal
+{
+    position: fixed;
+    background-color: rgb(209, 207, 207);
+    padding:40px;
+    outline: 2px solid rgb(6, 88, 61);
+    outline-offset: -0.5rem;
+    border: 2px solid green;
+    border-radius: 20px;
+    width: 50%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-200%);
+    min-width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal h2
+{
+    font-size: 4rem;
+    margin-bottom: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.modal p
+{
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.modal h3
+{
+    font-size: 6rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal button
+{
+    margin-top: 10px;
+    padding: 15px 30px;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(44, 44, 214);
+    text-align: center;
+}
+
+.modal button:hover
+{
+    background-color: rgb(82, 82, 211);
+}
+
+.modal span
+{
+    position:absolute;
+    right:17px;
+    top: 12px;
+    cursor: pointer;
+    background: url('./assets/icons/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    
+}
+
+
+.activado
+{
+    transform:translate(-50%, -50%);
+    transition: all 0.8s;
+}
+
+#overlay {
+    position:fixed;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    display:none;
+    background-color:#000;
+    opacity:0.9;
+
+  }
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>> MEDIAAAAAAAAAS >>>>>>>>>>>>>>>>>>>>*/
+
+@media (max-width:850px)
+{
+
+    main
+    {
+        flex-direction: column;
+    }
+
+    main .game-container
+    {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .scoreboard
+    {
+        display: none;
+    }
+
+    .player-score
+    {
+        display: block;
+    }
+
+    .cpu-score
+    {
+        display: block;
+    }
+}
+
+
+@media (max-width:526px)
+{
+    .modal
+    {
+        width: 80%;
+    }
+}
+
+@media (max-width:512px)
+{
+
+    .cpu-score
+    {
+        top: 50px;
+    }
+
+    .player-score
+    {
+        top: 50px;
+    }
+
+    .game-container
+    {
+        background: none;
+    }
+
+    .game-container .block
+    {
+        width: 90%;
+    }
+
+    .game-container .block div
+    {
+        width: 120px;
+        height: 120px;
+        background-color:red;
+        position:unset;
+    }
+
+    .game-container .block div:nth-child(1)
+    {
+        grid-area: a;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./assets/imgs/scissors.png");
+        
+    }
+
+    .game-container .block div:nth-child(2)
+    {
+        grid-area: b;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./assets/imgs/spock.png");
+    }
+
+    .game-container .block div:nth-child(3)
+    {
+        grid-area: c;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./assets/imgs/paper.png");
+    }
+
+    .game-container .block div:nth-child(4)
+    {
+        grid-area: d;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./assets/imgs/lizard.png");
+    }
+
+    .game-container .block div:nth-child(5)
+    {
+        grid-area: e;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./assets/imgs/rock.png");
+    }
+
+    .game-container .block
+    {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      
+        grid-template-areas: 
+        ". a . "
+        "b . c "
+        "d . e ";
+
+
+    }
+
+}
